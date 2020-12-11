@@ -13,7 +13,7 @@ temp_mod_2.set_temperature(42)
 
 ## Labware
 # 96-well plates                                            #### need to adjust where we will put these
-plate_OG = protocol.load_labware('corning_96_wellplate_360ul_flat', 3)
+plate_OG = protocol.load_labware('corning_96_wellplate_360ul_flat', 6)
 plate_new = protocol.load_labware('corning_96_wellplate_360ul_flat', 5)
 
 # Eppendorf racks
@@ -28,7 +28,7 @@ tiprack_2 = protocol.load_labware('opentrons_96_tiprack_300ul', 2)
 tiprack_3 = protocol.load_labware('opentrons_96_tiprack_20ul', 4)
 
 # Reagent reservoir -- I've left in the empty reservoirs for anyone to add to if they need
-reservoir = temp_mod_1.load_labware('usascientific_12_reservoir_22ml', 6)
+reservoir = temp_mod_1.load_labware('usascientific_12_reservoir_22ml', 3)
 # = reservoir['A1']
 LiAc_ssDNA = reservoir['A2']
 # = reservoir['A3'] 
