@@ -148,6 +148,7 @@ def CaCl_addition(column):
 supernatant(12)
 CaCl_addition(12)
 
+protocol.comment('Protocol complete!')
 
 for line in protocol.commands(): 
         print(line)
