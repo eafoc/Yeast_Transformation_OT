@@ -4,17 +4,17 @@ protocol = simulate.get_protocol_api('2.8')
 
 ## Modules                                                  #### need to adjust where we will put these
 # Keeping DNA at correct temperature
-temp_mod_1 = protocol.load_module('temperature module gen2',1)
+temp_mod_1 = protocol.load_module('temperature module gen2',6)
 temp_mod_1.set_temperature(4)                               #sets tempertaure to 4°C. 
 
 # Heat shock
-temp_mod_2 = protocol.load_module('temperature module gen2',4)
+temp_mod_2 = protocol.load_module('temperature module gen2',3)
 temp_mod_2.set_temperature(42)                              
 
 ## Labware
 # 96-well plates                                            #### need to adjust where we will put these
 plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 4)
-plate = protocol.load_labware('corning_96_wellplate_360ul_flat', 9)
+plate_new = protocol.load_labware('corning_96_wellplate_360ul_flat', 5)
 
 # Eppendorf racks
 eppendorfrack_1 = protocol.load_labware('opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap', 7)
@@ -23,12 +23,12 @@ eppendorfrack_3 = protocol.load_labware('opentrons_24_tuberack_eppendorf_1.5ml_s
 eppendorfrack_4 = protocol.load_labware('opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap', 11)
 
 # Tip racks
-tiprack_1 = protocol.load_labware('opentrons_96_tiprack_300ul', 2)
-tiprack_2 = protocol.load_labware('opentrons_96_tiprack_300ul', 3)
-tiprack_3 = protocol.load_labware('opentrons_96_tiprack_20ul', 5)
+tiprack_1 = protocol.load_labware('opentrons_96_tiprack_300ul', 1)
+tiprack_2 = protocol.load_labware('opentrons_96_tiprack_300ul', 2)
+tiprack_3 = protocol.load_labware('opentrons_96_tiprack_20ul', 4)
 
 # Reagent reservoir -- I've left in the empty reservoirs for anyone to add to if they need
-reservoir = temp_mod_1.load_labware('usascientific_12_reservoir_22ml', 1)
+reservoir = temp_mod_1.load_labware('usascientific_12_reservoir_22ml', 9)
 # = reservoir['A1']
 LiAc_ssDNA = reservoir['A2']
 # = reservoir['A3'] 
