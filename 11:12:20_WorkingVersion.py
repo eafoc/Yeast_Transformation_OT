@@ -133,7 +133,7 @@ for i in range(1,11):
 
 p300multi.flow_rate.aspirate = 25
 p300multi.flow_rate.dispense = 150
-p300multi.well_bottom_clearance.aspirate = 5
+p300multi.well_bottom_clearance.aspirate = 3
 p300multi.pick_up_tip()
 for i in range(12):
     p300multi.transfer(160, plate.columns()[i], waste, blow_out=True, blowout_location='destination well', new_tip='never')
