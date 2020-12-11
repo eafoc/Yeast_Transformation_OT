@@ -55,22 +55,23 @@ p20single = protocol.load_instrument('p20_single_gen2',
 protocol.max_speeds['Z'] = 10
 
 def DNATransfer(volH2O,volDNA):
+    p300multi.pick_up_tip()
     for i in range (12):
-        p300multi.transfer(volH2O, reservoir['A9'], plate_OG.columns()[i],blow_out=True, new_tip='never') #transfer to daniella's code
+        p300multi.transfer(volH2O, reservoir['A9'], plate_OG.columns()[i], blow_out=True, new_tip='never') #transfer to daniella's code
     for i in range (eppendorfrack_1):
-        p20single.transfer(volDNA,eppendorfrack_1[i],plate_OG[0:24],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA, eppendorfrack_1[i], plate_OG[0:24], blow_out=True, new_tip='always')
     for i in range (eppendorfrack_2):
-        p20single.transfer(volDNA,eppendorfrack_2[i],plate_OG[25:48],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA, eppendorfrack_2[i], plate_OG[25:48], blow_out=True, new_tip='always')
     for i in range (eppendorfrack_3):
-        p20single.transfer(volDNA,eppendorfrack_3[i],plate_OG[49:72],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA, eppendorfrack_3[i], plate_OG[49:72], blow_out=True, new_tip='always')
     for i in range (eppendorfrack_4):
-        p20single.transfer(volDNA,eppendorfrack_4[i],plate_OG[73:],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA, eppendorfrack_4[i], plate_OG[73:], ablow_out=True, new_tip='always')
         
 DNATransfer(5,5)
 
 ### Rough code for LiAc and PEG addition to 96 well plate --DANIELLA
 ## LiOac and ssDNA transfer
-p300multi.distribute(23, LiAc_ssDNA, plate_OG.columns()[:12], touch_tip=True, mix_before=(5,80), disposal_volume=24) # Mix the ssDNA and LioAC properly in reservoir
+"""p300multi.distribute(23, LiAc_ssDNA, plate_OG.columns()[:12], touch_tip=True, mix_before=(5,80), disposal_volume=24) # Mix the ssDNA and LioAC properly in reservoir
 
 ## PEG transfer                                               
 p300multi.flow_rate.aspirate=50
@@ -136,8 +137,8 @@ for i in range(1,11):
 ###Remove supernatant from the plate using multichannel pipette and add 200 ul of CaCl2 to each well - ELOISE
 def supernatant(column):
     p300multi.flow_rate.aspirate = 25
-    p300multi.flow_rate.dispense = 150
     p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised (idk how high the pellet would go)
+    p300multi.flow_rate.dispense = 150
     p300multi.pick_up_tip()
     for i in range(column):
         p300multi.transfer(160, plate_new.columns()[i], waste, blow_out=True, blowout_location='destination well', new_tip='never')
@@ -152,7 +153,7 @@ def CaCl_addition(column):
 
 supernatant(12)
 CaCl_addition(12)
-
+"""
 
 for line in protocol.commands(): 
         print(line)
