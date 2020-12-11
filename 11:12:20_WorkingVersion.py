@@ -133,22 +133,24 @@ for i in range(1,11):
 ## User should centrifuge at 2000 rmp for 10 minutes and return to position ....
 
 ###Remove supernatant from the plate using multichannel pipette and add 200 ul of CaCl2 to each well - ELOISE
+def supernatant(column):
+  p300multi.flow_rate.aspirate = 25
+  p300multi.flow_rate.dispense = 150
+  p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised (idk how high the pellet would go)
+  p300multi.pick_up_tip()
+  for i in range(column):
+      p300multi.transfer(160, plate.columns()[i], waste, blow_out=True, blowout_location='destination well', new_tip='never')
 
-p300multi.flow_rate.aspirate = 25
-p300multi.flow_rate.dispense = 150
-p300multi.well_bottom_clearance.aspirate = 3
-p300multi.pick_up_tip()
-for i in range(12):
-    p300multi.transfer(160, plate.columns()[i], waste, blow_out=True, blowout_location='destination well', new_tip='never')
-
-
+def CaCl_addition(column):
 p300multi.drop_tip()
 p300multi.flow_rate.aspirate = 150
 p300multi.flow_rate.dispense = 150
 p300multi.well_bottom_clearance.dispense = 3
-for x in range(12):
+for x in range(column):
 	p300multi.transfer(200, CaCl2, plate.columns()[x], blow_out=True, blowout_location='destination well', new_tip='always', mix_after=(7,100))
-            
+
+supernatant(12)
+CaCl_addition(12)
 
 
 for line in protocol.commands(): 
