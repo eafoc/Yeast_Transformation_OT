@@ -13,7 +13,7 @@ temp_mod_2.set_temperature(42)
 
 ## Labware
 # 96-well plates                                            #### need to adjust where we will put these
-plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 3)
+plate_OG = protocol.load_labware('corning_96_wellplate_360ul_flat', 3)
 plate_new = protocol.load_labware('corning_96_wellplate_360ul_flat', 5)
 
 # Eppendorf racks
