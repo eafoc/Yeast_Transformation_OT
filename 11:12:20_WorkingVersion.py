@@ -56,27 +56,28 @@ protocol.max_speeds['Z'] = 10
 
 def DNATransfer(volH2O,volDNA):
     for i in range (12):
-        p300multi.transfer(volH2O,reservoir['A9'], plate.columns[i],blow_out=True, new_tip='never') #transfer to daniella's code
+        p300multi.transfer(volH2O, reservoir['A9'], plate_OG.columns()[i],blow_out=True, new_tip='never') #transfer to daniella's code
     for i in range (eppendorfrack_1):
-        p20single.transfer(volDNA,eppendorfrack_1[i],plate[0:24],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA,eppendorfrack_1[i],plate_OG[0:24],blow_out=True, new_tip='always')
     for i in range (eppendorfrack_2):
-        p20single.transfer(volDNA,eppendorfrack_2[i],plate[25:48],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA,eppendorfrack_2[i],plate_OG[25:48],blow_out=True, new_tip='always')
     for i in range (eppendorfrack_3):
-        p20single.transfer(volDNA,eppendorfrack_3[i],plate[49:72],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA,eppendorfrack_3[i],plate_OG[49:72],blow_out=True, new_tip='always')
     for i in range (eppendorfrack_4):
-        p20single.transfer(volDNA,eppendorfrack_4[i],plate[73:],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA,eppendorfrack_4[i],plate_OG[73:],blow_out=True, new_tip='always')
         
 DNATransfer(5,5)
+
 ### Rough code for LiAc and PEG addition to 96 well plate --DANIELLA
 ## LiOac and ssDNA transfer
-p300multi.distribute(23, LiAc_ssDNA,plate.columns()[:12],touch_tip=True, mix_before=(5,80),disposal_volume=24) # Mix the ssDNA and LioAC properly in reservoir
+p300multi.distribute(23, LiAc_ssDNA, plate_OG.columns()[:12], touch_tip=True, mix_before=(5,80), disposal_volume=24) # Mix the ssDNA and LioAC properly in reservoir
 
 ## PEG transfer                                               
 p300multi.flow_rate.aspirate=50
 p300multi.flow_rate.dispense=40
 
 for i in range(12):                                  # note editable
-    p300multi.transfer(120, PEG, plate.columns()[i], touch_tip=True, blow_out=True, blowout_location='destination well', new_tip='always',mix_after=(5,50))               
+    p300multi.transfer(120, PEG, plate_OG.columns()[i], touch_tip=True, blow_out=True, blowout_location='destination well', new_tip='always',mix_after=(5,50))               
     # Mix the PEG, ssDNA, LioAC and plasmid DNA properly in 96-well plate
 
 #This step entails:
@@ -93,7 +94,7 @@ def transformationmixtureplusDNA(volume,column):
       p300multi.flow_rate.aspirate=50#to gently aspirate
       p300multi.flow_rate.dispense=50# and gently dispense.
       p300multi.transfer(volume,reservoir[location_of_transformationmixture],
-                      plate.columns()[i],
+                      plate_OG.columns()[i],
                       touch_tip=True,
                        blow_out=True, blowout_location='destination well',
                        mix_after=(3,100),#mixing step afterwards
@@ -110,21 +111,21 @@ temp_mod_2.set_temperature(42) #sets tempertaure to 42°C.
 
 #User move the 96-well plate to the heat-block module at position X.  
 
-temp_mod.temperature #confirm to the user that the heat block is at the right temperature
-temp_mod.status #further confirm the status of the heat block - if it is steady at the target temp. good to go
+temp_mod_2.temperature #confirm to the user that the heat block is at the right temperature
+temp_mod_2.status #further confirm the status of the heat block - if it is steady at the target temp. good to go
 temp_mod_2.set_block_temperature(42, hold_time_minutes=15, block_max_volume=355)
 
 #User removes the 96-well plate from the heat block at the end of the desired time. 
 
 #want this at the end of the protocol - the module wont turn off at the end of the protocol or if it is cancelled/reset by itself 
-temp_mod.deactivate() 
+temp_mod_2.deactivate() 
 
 
 #Transfers the transformed yeast cells from plate on heat block to new plate and centrifuge - EMILY
 
 for i in range(1,11):
     p300multi.transfer(175, plate_OG.columns()[i],  ## plate on heat block name
-                       plate.columns()[i],   ### new plate name
+                       plate_new.columns()[i],   ### new plate name
                        touch_tip=True, 
                        blow_out=True, blowout_location='destination well',
                        mix_after=(3,100),  ## Ensures mixture is homogenous
@@ -134,20 +135,20 @@ for i in range(1,11):
 
 ###Remove supernatant from the plate using multichannel pipette and add 200 ul of CaCl2 to each well - ELOISE
 def supernatant(column):
-  p300multi.flow_rate.aspirate = 25
-  p300multi.flow_rate.dispense = 150
-  p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised (idk how high the pellet would go)
-  p300multi.pick_up_tip()
-  for i in range(column):
-      p300multi.transfer(160, plate.columns()[i], waste, blow_out=True, blowout_location='destination well', new_tip='never')
+    p300multi.flow_rate.aspirate = 25
+    p300multi.flow_rate.dispense = 150
+    p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised (idk how high the pellet would go)
+    p300multi.pick_up_tip()
+    for i in range(column):
+        p300multi.transfer(160, plate_new.columns()[i], waste, blow_out=True, blowout_location='destination well', new_tip='never')
 
 def CaCl_addition(column):
-p300multi.drop_tip()
-p300multi.flow_rate.aspirate = 150
-p300multi.flow_rate.dispense = 150
-p300multi.well_bottom_clearance.dispense = 3
-for x in range(column):
-	p300multi.transfer(200, CaCl2, plate.columns()[x], blow_out=True, blowout_location='destination well', new_tip='always', mix_after=(7,100))
+    p300multi.drop_tip()
+    p300multi.flow_rate.aspirate = 150
+    p300multi.flow_rate.dispense = 150
+    p300multi.well_bottom_clearance.dispense = 3
+    for x in range(column):
+        p300multi.transfer(200, CaCl2, plate_new.columns()[x], blow_out=True, blowout_location='destination well', new_tip='always', mix_after=(7,100))
 
 supernatant(12)
 CaCl_addition(12)
