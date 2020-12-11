@@ -72,7 +72,7 @@ DNATransfer(5,5)
 ### LiOac, ssDNA and PEG addition to 96 well plate 
 ## LiOac and ssDNA transfer
 def LiOAc_ssDNA_transfer(volume, column):
-  p300multi.distribute(volume, LiAc_ssDNA, plate.columns()[:column], touch_tip=True, mix_before=(5,80), disposal_volume=24) # Mix the ssDNA and LioAC properly in reservoir 
+  p300multi.distribute(volume, LiAc_ssDNA, plate_OG.columns()[:column], touch_tip=True, mix_before=(5,80), disposal_volume=24) # Mix the ssDNA and LioAC properly in reservoir 
 
 LiOAc_ssDNA_transfer(23, 12)
 
@@ -80,7 +80,7 @@ LiOAc_ssDNA_transfer(23, 12)
 def PEG_transfer(volume, column):                                          
   p300multi.flow_rate.aspirate=50
   p300multi.flow_rate.dispense=40
-  p300multi.distribute(volume, PEG, plate.columns()[:column], touch_tip=True, disposal_volume=20, mix_after=(5,50))
+  p300multi.distribute(volume, PEG, plate_OG.columns()[:column], touch_tip=True, disposal_volume=20, mix_after=(5,50))
 #p300multi.pick_up_tip()
 
 PEG_transfer(120, 12) 
@@ -88,7 +88,7 @@ PEG_transfer(120, 12)
 def mixing(column):
     for x in range(column):
         p300multi.pick_up_tip()
-        p300multi.mix(5, 50, plate.rows()[x])
+        p300multi.mix(5, 50, plate_OG.rows()[x])
       
 mixing(12)
 
