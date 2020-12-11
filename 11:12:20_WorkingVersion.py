@@ -151,7 +151,7 @@ DNATransfer(5,96)
 
 ### Adding yeast to all wells
 
-location_of_yeast="A10"         #This assumes the plate already has the DNA on it. 
+location_of_yeast="A8"         #This assumes the plate already has the DNA on it. 
 
 def yeast_DNA(volume2,column):
     p300multi.flow_rate.aspirate=50           #to gently aspirate
