@@ -76,7 +76,27 @@ for i in range(12):                                  # note editable
     p300multi.transfer(120, PEG, plate.columns()[i], touch_tip=True, blow_out=True, blowout_location='destination well', new_tip='always',mix_after=(5,50))               
     # Mix the PEG, ssDNA, LioAC and plasmid DNA properly in 96-well plate
 
+#This step entails:
+#Pipette 175 ul of transformation mixture yeast into each well of the 96-well 
+#PCR plate containing the DNA, aspirating gently several times to mix the DNA and
+#yeast well.
 
+##### Takes from the transformation mixture yeast with DNA well containg 
+location_of_transformationmixture="A10"##unsure about location of transformation mixture. 
+#This assumes the plate already has the DNA on it. 
+#mix_after ensure it is well mixed with DNA. 
+def transformationmixtureplusDNA(volume,column):
+  for i in range(column):#Starting at zero means A1-A12 are being done. 
+      p300multi.flow_rate.aspirate=50#to gently aspirate
+      p300multi.flow_rate.dispense=50# and gently dispense.
+      p300multi.transfer(volume,reservoir[location_of_transformationmixture],
+                      plate.columns()[i],
+                      touch_tip=True,
+                       blow_out=True, blowout_location='destination well',
+                       mix_after=(3,100),#mixing step afterwards
+                       new_tip='always')#as DNA plasmid step being used,
+                       #new tips all the time reccomended. 
+	
 # Step 11 - KIM
 
 ### Module for Heat shock
