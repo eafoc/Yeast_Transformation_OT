@@ -147,3 +147,6 @@ for x in range(12):
 	p300multi.transfer(200, CaCl2, plate.columns()[x], blow_out=True, blowout_location='destination well', new_tip='always', mix_after=(7,100))
             
 
+
+for line in protocol.commands(): 
+        print(line)
