@@ -4,7 +4,7 @@ protocol = simulate.get_protocol_api('2.8')
 
 ## Modules                                                  #### need to adjust where we will put these
 # Keeping DNA at correct temperature
-temp_mod_1 = protocol.load_module('temperature module gen2',6)
+temp_mod_1 = protocol.load_module('temperature module gen2',3)
 temp_mod_1.set_temperature(4)                               #sets tempertaure to 4°C. 
 
 # Heat shock
