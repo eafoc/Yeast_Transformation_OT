@@ -111,15 +111,22 @@ temp_mod_2.deactivate()
 
 
 #Transfers the transformed yeast cells from plate on heat block to new plate and centrifuge - EMILY
-#NEED TO SORT OUT WHERE THE TIPS ARE FROM
-def plate_transfer(volume,column):
-    for i in range(column):
-        p300multi.transfer(volume, plate_OG.columns()[i], plate_new.columns()[i], touch_tip=True, blow_out=True, blowout_location='destination well', mix_after=(3,100), new_tip='always', trash=False)
-        
-plate_transfer(175,12)
+def transfer_to_new(volume,column):
+  plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of plate_OG to temperature block
+  for i in range(column):
+    p300multi.pick_up_tip(tiprack_2.columns()[i][0])          # Picks up and iterates through columns of tiprack_2
+    p300_multi.transfer(volume, plate_OG.columns()[i],              # plate on heat block name
+                       plate_new.columns()[i],                      # new plate name
+                       touch_tip=True, 
+                       blow_out=True, 
+                       blowout_location='destination well',
+                       mix_after=(3,100),                       # Ensures mixture is homogenous
+                       new_tip='never')                     # Allows tips to be reused in later steps
+    p300_multi.return_tip()                                 # Returns tips to be reused
+  
+transfer_to_new(175,12)
 
-## User should centrifuge at 2000 rmp for 10 minutes and return to position ....
-
+## User should centrifuge at 2000 rmp for 10 minutes and return to deck position 5
 
 ###Remove supernatant from the plate using multichannel pipette and add 200 ul of CaCl2 to each well - ELOISE
 def supernatant(column):
