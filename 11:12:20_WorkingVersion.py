@@ -85,22 +85,21 @@ for i in range(12):                                  # note editable
 #Pipette 175 ul of transformation mixture yeast into each well of the 96-well 
 #PCR plate containing the DNA, aspirating gently several times to mix the DNA and
 #yeast well.
-
-##### Takes from the transformation mixture yeast with DNA well containg 
-location_of_transformationmixture="A10"##unsure about location of transformation mixture. 
-#This assumes the plate already has the DNA on it. 
-#mix_after ensure it is well mixed with DNA. 
-def transformationmixtureplusDNA(volume,column):
-  for i in range(column):#Starting at zero means A1-A12 are being done. 
+location_of_yeast="A10"
+def yeast_DNA(volume2,column):
+  for i in range(column):
       p300multi.flow_rate.aspirate=50#to gently aspirate
       p300multi.flow_rate.dispense=50# and gently dispense.
-      p300multi.transfer(volume,reservoir[location_of_transformationmixture],
+      p300multi.transfer(volume2,reservoir[location_of_yeast],
                       plate_OG.columns()[i],
+                      trash=False,
                       touch_tip=True,
                        blow_out=True, blowout_location='destination well',
-                       mix_after=(3,100),#mixing step afterwards
-                       new_tip='always')#as DNA plasmid step being used,
-                       #new tips all the time reccomended. 
+                       mix_after=(3,70),
+                       new_tip='always') 
+
+yeast_DNA(32,12)
+
 	
 # Step 11 - KIM
 
