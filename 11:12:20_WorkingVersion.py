@@ -54,15 +54,21 @@ p20single = protocol.load_instrument('p20_single_gen2',
 #when you load an instrument you can only have one type of working pipette loaded at any one time. 
 protocol.max_speeds['Z'] = 10
 
+def DNATransfer(volDNA,volH2O):
+    for i in range (eppendorfrack_1):
+        p20single.transfer(volDNA,eppendorfrack_1[i],plate[0:24],blow_out=True, new_tip='always')
+        p20_single_gen2.transfer(volH2O,reservoir['A9'],plate[0:24],blow_out=True, new_tip='always')
+    for i in range (eppendorfrack_2):
+        p20_single_gen2.transfer(volDNA,snaprack2[i],plate[25:48],blow_out=True, new_tip='always')
+        p20_single_gen2.transfer(volH2O,snaprack2[i],plate[25:48],blow_out=True, new_tip='always')
+    for i in range (eppendorfrack_3):
+        p20_single_gen2.transfer(volDNA,snaprack3[i],plate[49:72],blow_out=True, new_tip='always')
+        p20_single_gen2.transfer(volH2O,snaprack3[i],plate[49:72],blow_out=True, new_tip='always')
+    for i in range (eppendorfrack_4):
+        p20_single_gen2.transfer(volDNA,snaprack3[i],plate[73:],blow_out=True, new_tip='always')
+        p20_single_gen2.transfer(volH2O,snaprack3[i],plate[73:],blow_out=True, new_tip='always')        
 
-
-
-
-
-
-
-
-
+DNATransfer(10,0)
 
 ### Rough code for LiAc and PEG addition to 96 well plate --DANIELLA
 ## LiOac and ssDNA transfer
