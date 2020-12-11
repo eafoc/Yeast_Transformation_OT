@@ -8,7 +8,7 @@ temp_mod_1 = protocol.load_module('temperature module gen2',6)
 temp_mod_1.set_temperature(4)                               #sets tempertaure to 4°C. 
 
 # Heat shock
-temp_mod_2 = protocol.load_module('temperature module gen2',3)
+temp_mod_2 = protocol.load_module('temperature module gen2',9)
 temp_mod_2.set_temperature(42)                              
 
 ## Labware
@@ -28,7 +28,7 @@ tiprack_2 = protocol.load_labware('opentrons_96_tiprack_300ul', 2)
 tiprack_3 = protocol.load_labware('opentrons_96_tiprack_20ul', 4)
 
 # Reagent reservoir -- I've left in the empty reservoirs for anyone to add to if they need
-reservoir = temp_mod_1.load_labware('usascientific_12_reservoir_22ml', 9)
+reservoir = temp_mod_1.load_labware('usascientific_12_reservoir_22ml', 3)
 # = reservoir['A1']
 LiAc_ssDNA = reservoir['A2']
 # = reservoir['A3'] 
@@ -37,7 +37,7 @@ PEG = reservoir['A4']
 CaCl2 = reservoir['A6']
 # = reservoir['A7'] 
 yeast = reservoir['A8']
-# = reservoir['A9'] 
+water = reservoir['A9'] 
 # = reservoir['A10'] 
 # = reservoir['A11'] 
 waste = reservoir['A12']
@@ -54,22 +54,19 @@ p20single = protocol.load_instrument('p20_single_gen2',
 #when you load an instrument you can only have one type of working pipette loaded at any one time. 
 protocol.max_speeds['Z'] = 10
 
-def DNATransfer(volDNA,volH2O):
+def DNATransfer(volH2O,volDNA):
+    for i in range (12):
+        p300multi.transfer(volH2O,reservoir['A9'], plate.columns[i],blow_out=True, new_tip='never') #transfer to daniella's code
     for i in range (eppendorfrack_1):
         p20single.transfer(volDNA,eppendorfrack_1[i],plate[0:24],blow_out=True, new_tip='always')
-        p20_single_gen2.transfer(volH2O,reservoir['A9'],plate[0:24],blow_out=True, new_tip='always')
     for i in range (eppendorfrack_2):
-        p20_single_gen2.transfer(volDNA,snaprack2[i],plate[25:48],blow_out=True, new_tip='always')
-        p20_single_gen2.transfer(volH2O,snaprack2[i],plate[25:48],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA,eppendorfrack_2[i],plate[25:48],blow_out=True, new_tip='always')
     for i in range (eppendorfrack_3):
-        p20_single_gen2.transfer(volDNA,snaprack3[i],plate[49:72],blow_out=True, new_tip='always')
-        p20_single_gen2.transfer(volH2O,snaprack3[i],plate[49:72],blow_out=True, new_tip='always')
+        p20single.transfer(volDNA,eppendorfrack_3[i],plate[49:72],blow_out=True, new_tip='always')
     for i in range (eppendorfrack_4):
-        p20_single_gen2.transfer(volDNA,snaprack3[i],plate[73:],blow_out=True, new_tip='always')
-        p20_single_gen2.transfer(volH2O,snaprack3[i],plate[73:],blow_out=True, new_tip='always')        
-
-DNATransfer(10,0)
-
+        p20single.transfer(volDNA,eppendorfrack_4[i],plate[73:],blow_out=True, new_tip='always')
+        
+DNATransfer(5,5)
 ### Rough code for LiAc and PEG addition to 96 well plate --DANIELLA
 ## LiOac and ssDNA transfer
 p300multi.distribute(23, LiAc_ssDNA,plate.columns()[:12],touch_tip=True, mix_before=(5,80),disposal_volume=24) # Mix the ssDNA and LioAC properly in reservoir
