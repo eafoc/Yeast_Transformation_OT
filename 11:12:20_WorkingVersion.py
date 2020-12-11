@@ -58,13 +58,13 @@ def DNATransfer(volH2O,volDNA):
     p300multi.pick_up_tip()
     for i in range (12):
         p300multi.transfer(volH2O, reservoir['A9'], plate_OG.columns()[i], blow_out=True, new_tip='never') #transfer to daniella's code
-    for i in range (eppendorfrack_1):
+    for i in range (24):
         p20single.transfer(volDNA, eppendorfrack_1[i], plate_OG[0:24], blow_out=True, new_tip='always')
-    for i in range (eppendorfrack_2):
+    for i in range (24):
         p20single.transfer(volDNA, eppendorfrack_2[i], plate_OG[25:48], blow_out=True, new_tip='always')
-    for i in range (eppendorfrack_3):
+    for i in range (24):
         p20single.transfer(volDNA, eppendorfrack_3[i], plate_OG[49:72], blow_out=True, new_tip='always')
-    for i in range (eppendorfrack_4):
+    for i in range (24):
         p20single.transfer(volDNA, eppendorfrack_4[i], plate_OG[73:], ablow_out=True, new_tip='always')
         
 DNATransfer(5,5)
@@ -100,12 +100,6 @@ def yeast_DNA(volume2,column):
 
 yeast_DNA(32,12)
 
-	
-# Step 11 - KIM
-
-### Module for Heat shock
-temp_mod_2 = protocol.load_module('Heat-Shock Module',4) #change the module position 
-temp_mod_2.set_temperature(42) #sets tempertaure to 42°C. 
 
 #this code is at Step 11 --> #Transfer the PCR plate to a 96-well thermocycler block set at 42°C for 40 mins
 
@@ -113,13 +107,14 @@ temp_mod_2.set_temperature(42) #sets tempertaure to 42°C.
 
 temp_mod_2.temperature #confirm to the user that the heat block is at the right temperature
 temp_mod_2.status #further confirm the status of the heat block - if it is steady at the target temp. good to go
-temp_mod_2.set_block_temperature(42, hold_time_minutes=15, block_max_volume=355)
+
+protocol.pause('Move plate to Heat deck for Heat Shock')
+protocol.delay(minutes=40)
 
 #User removes the 96-well plate from the heat block at the end of the desired time. 
 
 #want this at the end of the protocol - the module wont turn off at the end of the protocol or if it is cancelled/reset by itself 
 temp_mod_2.deactivate() 
-
 
 #Transfers the transformed yeast cells from plate on heat block to new plate and centrifuge - EMILY
 
