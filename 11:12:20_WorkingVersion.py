@@ -124,7 +124,7 @@ for i in range(1,11):
                        plate.columns()[i],   ### new plate name
                        touch_tip=True, 
                        blow_out=True, blowout_location='destination well',
-                       mix_after=(3,100)  ## Ensures mixture is homogenous
+                       mix_after=(3,100),  ## Ensures mixture is homogenous
                        new_tip='always')
     
 ## User should centrifuge at 2000 rmp for 10 minutes and return to position ....
