@@ -135,7 +135,7 @@ def CaCl_addition(column):
     p300multi.flow_rate.aspirate = 150
     p300multi.flow_rate.dispense = 150
     p300multi.well_bottom_clearance.dispense = 3
-    for x in range(column):
+    for i in range(column):
         p300multi.transfer(200, CaCl2, plate_new.columns()[x], blow_out=True, blowout_location='destination well', new_tip='always', mix_after=(7,100))
 
 supernatant(12)
