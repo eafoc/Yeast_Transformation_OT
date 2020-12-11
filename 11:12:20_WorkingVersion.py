@@ -60,7 +60,7 @@ def H2OTransfer(volH20,column):
     p300multi.pick_up_tip(tiprack_1['A1'])              # Picks up column of tips
     for i in range(column):
         p300multi.transfer( volH20,                     # Dispenses 5ul water into each well of 96 plate
-                            reservoir['A9'],
+                            water,
                             plate_OG.columns()[i],
                             blow_out=True,
                             blowout_location='destination well',
