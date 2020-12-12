@@ -76,9 +76,9 @@ def LiOAc_ssDNA_transfer(volume, column):
                          LiAc_ssDNA, 
                          plate_OG.columns()[:column], 
                          touch_tip=True, 
-                         mix_before=(5,80),
+                         mix_before=(5,200),  # Mix the ssDNA and LioAC properly in reservoir 
                          disposal_volume=24,
-                         new_tip='never') # Mix the ssDNA and LioAC properly in reservoir 
+                         new_tip='never') 
     p300multi.return_tip()
     
 LiOAc_ssDNA_transfer(23, 12)
