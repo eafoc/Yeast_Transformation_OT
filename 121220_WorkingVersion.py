@@ -172,6 +172,7 @@ temp_mod_2.deactivate()
 ### Transfers the transformed yeast cells from plate on heat block to new plate
 
 def transfer_to_new(volume,column):
+    plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of plate_OG
     for i in range(column):
         p300multi.pick_up_tip(tiprack_2.columns()[i][0])
         p300multi.transfer(volume, 
