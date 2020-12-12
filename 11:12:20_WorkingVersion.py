@@ -4,7 +4,7 @@ protocol = simulate.get_protocol_api('2.8')
 
 ## Modules                                                  #### need to adjust where we will put these
 # Keeping DNA at correct temperature
-temp_mod_1 = protocol.load_module('temperature module gen2',3)
+temp_mod_1 = protocol.load_module('temperature module gen2',6)
 temp_mod_1.set_temperature(4)                               #sets tempertaure to 4°C. 
 
 # Heat shock
@@ -13,7 +13,7 @@ temp_mod_2.set_temperature(42)
 
 ## Labware
 # 96-well plates                                            #### need to adjust where we will put these
-plate_OG = protocol.load_labware('corning_96_wellplate_360ul_flat', 6)
+plate_OG = temp_mod_1.load_labware('corning_96_wellplate_360ul_flat', 6)
 plate_new = protocol.load_labware('corning_96_wellplate_360ul_flat', 5)
 
 # Eppendorf racks
@@ -28,7 +28,7 @@ tiprack_2 = protocol.load_labware('opentrons_96_tiprack_300ul', 2)
 tiprack_3 = protocol.load_labware('opentrons_96_tiprack_20ul', 4)
 
 # Reagent reservoir -- I've left in the empty reservoirs for anyone to add to if they need
-reservoir = temp_mod_1.load_labware('usascientific_12_reservoir_22ml', 3)
+reservoir = protocol.load_labware('usascientific_12_reservoir_22ml', 3)
 # = reservoir['A1']
 LiAc_ssDNA = reservoir['A2']
 # = reservoir['A3'] 
@@ -151,7 +151,7 @@ DNATransfer(5,96)
 
 ### Adding yeast to all wells
 
-location_of_yeast="A8"         #This assumes the plate already has the DNA on it. 
+#This assumes the plate already has the DNA on it. 
 
 def yeast_DNA(volume2,column):
     p300multi.flow_rate.aspirate=50           #to gently aspirate
@@ -159,7 +159,7 @@ def yeast_DNA(volume2,column):
     for i in range(column):
         p300multi.pick_up_tip(tiprack_2.columns()[i][0])   # Starting tips from rack 2
         p300multi.transfer(volume2,
-                           reservoir[location_of_yeast],
+                           yeast,
                            plate_OG.columns()[i],
                            trash=False,
                            touch_tip=True,
