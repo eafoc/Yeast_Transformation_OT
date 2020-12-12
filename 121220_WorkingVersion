@@ -95,7 +95,7 @@ def DNATransfer(DNATransfer,wells):
                                 blow_out=True,
                                 blowout_location='destination well')
 
-DNATransfer(5,30)
+DNATransfer(5,96)
 
 
 ### LiOac and ssDNA transfer
