@@ -71,6 +71,7 @@ H2OTransfer(5,12)
 
 #should find a way to let the user know somehow what wells on the 96 plate corresponds to what eppendorf!!!
 
+### Transfers DNA from eppendorfs to the plate
 def DNATransfer(DNATransfer,wells):        
     for i in range(wells):
         if i <= 23:
