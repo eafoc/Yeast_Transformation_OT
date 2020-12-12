@@ -96,12 +96,12 @@ def DNA_transfer(DNAvolume, H20volume, well):
             p20single.drop_tip()
         elif i <= 71:
             p20single.aspirate(H20volume, water)
-            p20single.aspirate(DNAvolume, eppendorfrack_2.wells()[i-48])
+            p20single.aspirate(DNAvolume, eppendorfrack_3.wells()[i-48])
             p20single.blow_out(plate_OG.wells()[i])
             p20single.drop_tip()
         else:
             p20single.aspirate(H20volume, water)
-            p20single.aspirate(DNAvolume, eppendorfrack_2.wells()[i-72])
+            p20single.aspirate(DNAvolume, eppendorfrack_4.wells()[i-72])
             p20single.blow_out(plate_OG.wells()[i])
             p20single.drop_tip()
 
