@@ -122,7 +122,10 @@ def yeast_DNA(volume,column):
                            new_tip='never')    
         p300multi.return_tip()             
 
-##########################Trasfer from from plate on heat block (9) to new plate(5)
+##########################User moves the plate from position 6 to the heat block (9)
+#Heat shock step with user defined settings for temperature and duration 
+        
+##########################Trasfer contents of plate on the heat block (9) to a new plate(5)
 def transfer_to_new(volume,column):
     plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of plate_OG
     for i in range(column):
@@ -185,10 +188,10 @@ yeast_DNA(32,12)
 temp_mod_2.status
 temp_mod_2.temperature
 
-protocol.pause('Move plate from cold block on 3 to heat block on 9 for 40 minute heat shock')
+protocol.pause('Move plate from cold block on 6 to heat block on 9 for 40 minute heat shock')
 protocol.delay(minutes=40)
 
-#User removes the 96-well plate from the heat block at the end of the desired time back to posiiton 3. 
+#Opentron moves the contents of the plate from position 9 (heat shock) to the new plate at position 5. 
 
 #want this at the end of the protocol - the module wont turn off at the end of the protocol or if it is cancelled/reset by itself 
 temp_mod_2.deactivate() 
