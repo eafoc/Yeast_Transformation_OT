@@ -118,6 +118,7 @@ def yeast_DNA(volume,column):
                            touch_tip=True,
                            blow_out=True, 
                            blowout_location='destination well',
+                           mix_before(3,200),
                            mix_after=(3,100),               
                            new_tip='never')    
         p300multi.return_tip()             
