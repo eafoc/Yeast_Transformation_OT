@@ -290,8 +290,6 @@ if substring in filename:   ## if filename ends with .py all is good
 else:           ## If not, will add it automatically
     filename = filename + ".py"
 
-from itertools import islice
-
 with open(filename, "w") as new_file:
     new_file.write("#Opentrons protocol\n")
     new_file.write("\n")
