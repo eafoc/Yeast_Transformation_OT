@@ -37,8 +37,6 @@ Enter the values specific to your experiment.
 Ignore the following errors may appear:
   
 	$ /.opentrons/deck_calibration.json not found. Loading defaults
-
-
 	$ /.opentrons/robot_settings.json not found. Loading defaults
 
 
