@@ -34,7 +34,7 @@ Prompts will appear, as shown below. Enter the specific values for your experime
 
 ![Save GitHub folder on to your computer](https://i.postimg.cc/cLFZ72tb/Screenshot-2020-12-14-at-16-23-20.png)
 
-Ignore the following errors may appear:
+Ignore the following errors (appears because computer is not connected to Opentrons:
   
 	$ /.opentrons/deck_calibration.json not found. Loading defaults
 	$ /.opentrons/robot_settings.json not found. Loading defaults
