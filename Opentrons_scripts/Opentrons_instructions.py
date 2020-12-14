@@ -189,20 +189,20 @@ def yeast_DNA(column):
                            new_tip='never')    
         p300multi.return_tip()             
 
-##########################Trasfer from from plate on heat block (9) to new plate(5)
+##########################Trasfer content from original plate to new plate
 def transfer_to_new(column):
-    plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of plate_OG
+    plate_OG = temp_mod_2.load_labware('corning_96_wellplate_360ul_flat', 9)   # Updates position of original plate on to tempaterature block
     for i in range(column):
-        p300multi.pick_up_tip(tiprack_2.columns()[i][0])
-        p300multi.transfer(175, 
-                            plate_OG.columns()[i],              # change to position on heat block name
+        p300multi.pick_up_tip(tiprack_2.columns()[i][0])          
+        p300multi.transfer(175,                                      # Transfer contents of original plate to new, sterile plate
+                            plate_OG.columns()[i],              
                             plate_new.columns()[i],                      
-                            touch_tip=True, 
+                            touch_tip=True,                          # Extra steps ensures minimal loss of cells
                             blow_out=True, 
                             blowout_location='destination well',
-                            mix_after=(3,100),
-                            new_tip='never')                    
-        p300multi.return_tip()                                 
+                            mix_after=(3,100),                       # Mixing step to ensure everything is homogenous
+                            new_tip='never')                                   
+        p300multi.return_tip()                                       # Returns tips to tip rack to be reused
 
 ##########################Remove supernatant
 def supernatant(column):
