@@ -7,7 +7,7 @@ Automated yeast transformation protocol using Opentrons 2
 
 2. Open terminal or command line and change the directory (‘cd’) to ::
 
-  	$ YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
+	$ YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
  
 3. Run the script using python by typing the following on either macs or windows
   on macs:
@@ -37,4 +37,4 @@ Automated yeast transformation protocol using Opentrons 2
 
 Then you can run::
 
-	$ python pymultinest-folder/multinest_marginals.py myprefix-
+	$ YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
