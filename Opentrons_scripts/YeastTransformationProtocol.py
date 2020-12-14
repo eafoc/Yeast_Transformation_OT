@@ -301,7 +301,7 @@ with open(filename, "w") as new_file:
     
     with open("YeastTransformationProtocol.py") as f:
         for num, line in enumerate(f, 1):
-          if num >= 23 and num <= 278:
+          if num >= 23 and num <= 272:
             new_file.write(line)
     
     new_file.write("\n")     
