@@ -103,7 +103,7 @@ protocol.max_speeds['Z'] = 10
 # LiOac and ssDNA transfer
 def LiOAc_ssDNA_transfer(column):
   p300multi.distribute(23,
-                    LiAc_ssDNA, 
+                    LiOAc_ssDNA, 
                     plate_OG.columns()[:column], 
                     touch_tip=True,
                     mix_before=(5,200),                # Mix the ssDNA and LioAC properly in reservoir
