@@ -1,5 +1,11 @@
 # Yeast Tranformation Protocol
 Automated yeast transformation using lithium acetate for Opentrons 2.
+1) Opentron will add transformation mix into wells along with yeast
+2) User will move onto temperature module for heat shock
+3) Opentron will transfer contents to sterile plate
+4) User will centrifuge plate
+5) Opentron resuspends cells and adds calcium chloride
+6) Plate is now ready for incubation and plating
 
 Download the folder from GitHub
 -------------------
