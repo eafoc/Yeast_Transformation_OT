@@ -32,3 +32,8 @@ Automated yeast transformation protocol using Opentrons 2
 8. You can now run your new file in the opentron and it will use values specific to your experiment 
 
 ![Mac terminal instructions](https://i.postimg.cc/wvNqF3gf/Picture2.png)
+
+
+Then you can run::
+
+	$ python pymultinest-folder/multinest_marginals.py myprefix-
