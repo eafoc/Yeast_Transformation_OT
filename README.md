@@ -4,7 +4,7 @@ Automated yeast transformation using lithium acetate for Opentrons 2.
 2) User will move plate onto temperature module
 3) Opentrons heat shock cells and transfers the samples to a new sterile plate
 4) User will centrifuge plate and return to Opentrons robot
-5) Automated resuspension of cells and addition of calcium chloride
+5) Automated resuspension of cells in calcium chloride
 6) Plate is now ready for incubation and plating
 
 Download the folder from GitHub
