@@ -295,28 +295,28 @@ else:           ## If not, will add it automatically
 from itertools import islice
 
 with open(filename, "w") as new_file:
-    new_file.write("#Opentrons protocol\n")
-    new_file.write("\n")
-    new_file.write("### DNA volumes a is set to: " + str(DNA_vol) + "\n")
-    new_file.write("DNA_vol = " + str(DNA_vol) + "\n")
-    new_file.write("H2O_vol = " + str(H2O_vol) + "\n")
-    new_file.write("\n")
-    new_file.write("###Transformants is set to: " + str(transformants) + "\n")
-    new_file.write("transformants = " + str(transformants) + "\n")
-    new_file.write("multichannel_column_number = " + str(multichannel_column_number) + "\n")
-    new_file.write("\n")
-    new_file.write("###Temperature for heat shock is set to: " + str(temp_block) + "\n")
-    new_file.write("temp_block = " + str(temp_block) + "\n")
-    new_file.write("\n")
-    new_file.write("###Time for heat shock is set to: " + str(time_block) + "\n")
-    new_file.write("time_block = " + str(time_block) + "\n")
-    new_file.write("\n")
-
-    with open("/Users/daniellapretorius/Desktop/Command_line_program/temp.py") as fin:
-        lines = islice(fin, 50, 290) # or whatever ranges
-        for line in lines:
-            new_file.write(line)
-        
-    new_file.write("\n")     
-    new_file.write("for line in protocol.commands():\n")
-    new_file.write("    print(line)\n")    
+	new_file.write("#Opentrons protocol\n")
+	new_file.write("\n")
+	new_file.write("### DNA volumes a is set to: " + str(DNA_vol) + "\n")
+	new_file.write("DNA_vol = " + str(DNA_vol) + "\n")
+	new_file.write("H2O_vol = " + str(H2O_vol) + "\n")
+	new_file.write("\n")
+	new_file.write("###Transformants is set to: " + str(transformants) + "\n")
+	new_file.write("transformants = " + str(transformants) + "\n")
+	new_file.write("multichannel_column_number = " + str(multichannel_column_number) + "\n")
+	new_file.write("\n")
+	new_file.write("###Temperature for heat shock is set to: " + str(temp_block) + "\n")
+	new_file.write("temp_block = " + str(temp_block) + "\n")
+	new_file.write("\n")
+	new_file.write("###Time for heat shock is set to: " + str(time_block) + "\n")
+	new_file.write("time_block = " + str(time_block) + "\n")
+	new_file.write("\n")
+	
+	with open("14:12:20.py") as f:     ## This needs to be the name of this file!
+        	for num, line in enumerate(f, 1):
+          		if num >= 50 and num <= 209:
+            		new_file.write(line)
+			
+	new_file.write("\n")     
+	new_file.write("for line in protocol.commands():\n")
+	new_file.write("    print(line)\n")  
