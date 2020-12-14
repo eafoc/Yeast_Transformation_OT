@@ -22,6 +22,7 @@ Automated yeast transformation protocol using Opentrons 2
 5. Ignore the two error messages that appear:
 
 /Users/eloiseoconnor/.opentrons/deck_calibration.json not found. Loading defaults
+
 /Users/eloiseoconnor/.opentrons/robot_settings.json not found. Loading defaults
 
 6. Name the new file your experiment name. e.g. 14122020_EloisesTransformation
