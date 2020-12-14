@@ -23,7 +23,7 @@ Automated yeast transformation protocol using Opentrons 2
 
 6. Name the new file your experiment name. e.g. 14122020_EloisesTransformation
 
-7. The new file will be saved in the Opentrons_scripts folder. If you like, you can check this using list (‘ls’) which shows all the files in your current working directory.
+7. The new file will be saved in the Opentrons_scripts folder. If you like, you can check this using list (‘ls’) on mac, which shows all the files in your current working directory.
   on windows:
     Use dir to display a list of files.
 
