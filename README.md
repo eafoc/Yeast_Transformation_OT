@@ -26,4 +26,4 @@ Automated yeast transformation protocol using Opentrons 2
 
 8. You can now run your new file in the opentron and it will use values specific to your experiment 
 
-![Screenshot1](3DTest.png)
+![Screenshot1](https://i.postimg.cc/wvNqF3gf/Picture2.png)
