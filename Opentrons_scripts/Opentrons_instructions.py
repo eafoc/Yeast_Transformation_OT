@@ -7,7 +7,6 @@ DNA_vol = int(input("Please enter the plasmid DNA volume per transformation (µl
 #this should change accordingly with the DNA volume 
 H2O_vol = 10 - DNA_vol
 
-
 ## Changes to number of columns
 # user input
 transformants = int(input("Please enter the number of transformants that will be produced: "))
@@ -303,7 +302,7 @@ with open(filename, "w") as new_file:
     
     with open("Opentrons_instructions.py") as f:
         for num, line in enumerate(f, 1):
-          if num >= 50 and num <= 209:
+          if num >= 23 and num <= 278:
             new_file.write(line)
     
     new_file.write("\n")     
