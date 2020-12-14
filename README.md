@@ -1,4 +1,4 @@
-# Yeast_Transformation_OT
+# Yeast Tranformation Protocol
 Automated yeast transformation protocol using Opentrons 2
 
 Download the folder from GitHub
