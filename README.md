@@ -26,16 +26,12 @@ Enter the values specific to your experiment.
 
 ![Save GitHub folder on to your computer](https://i.postimg.cc/cLFZ72tb/Screenshot-2020-12-14-at-16-23-20.png)
 
-The following errors may appear:
+Ignore the following errors may appear:
   
 	$ /.opentrons/deck_calibration.json not found. Loading defaults
 
 
 	$ /.opentrons/robot_settings.json not found. Loading defaults
-
-
-
-
 
 
 Enter new file name. 
@@ -48,13 +44,3 @@ You can now run your new file in the opentron!
 
 
 
-
-
-### Stop
-
-
-5. Ignore the two error messages that appear:
-
-/Users/eloiseoconnor/.opentrons/deck_calibration.json not found. Loading defaults
-
-/Users/eloiseoconnor/.opentrons/robot_settings.json not found. Loading defaults
