@@ -1,6 +1,6 @@
 ## DNA:water ratio
 # user input
-DNA_vol = int(input("Please enter the plasmid DNA volume per transformation (µl): "))
+DNA_vol = int(input("Please enter the plasmid DNA volume per transformation (max vol = 10 µL) (µL): "))
 
 #this should change accordingly with the DNA volume 
 H2O_vol = 10 - DNA_vol
