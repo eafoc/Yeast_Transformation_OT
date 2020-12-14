@@ -101,17 +101,16 @@ protocol.max_speeds['Z'] = 10
 
 #######################Transformation mixture preperation
 # LiOac and ssDNA transfer
-def LiOAc_ssDNA_transfer(column): 
-    p300multi.pick_up_tip(tiprack_1['A1'])      ## Not sure about tips, are we reusing what we used for water?
-    p300multi.mix(5,200,LiOAc_ssDNA)
-    p300multi.transfer(23,
-                         LiOAc_ssDNA, 
-                         plate_OG.columns()[:column], 
-                         touch_tip=True,
-                         blowout=True,
-                         blowout_location='destination well',
-                         new_tip='never') # Mix the ssDNA and LioAC properly in reservoir 
-    p300multi.return_tip()
+def LiOAc_ssDNA_transfer(column):
+  p300multi.pick_up_tip(tiprack_1['A2'])
+  p300multi.distribute(23,
+                    LiAc_ssDNA, 
+                    plate_OG.columns()[:column], 
+                    touch_tip=True,
+                    mix_before=(5,200),                # Mix the ssDNA and LioAC properly in reservoir
+                    disposal_volume=24
+                    )
+  p300multi.drop_tip()
 
 # PEG transfer 
 def PEG_transfer(column):   
