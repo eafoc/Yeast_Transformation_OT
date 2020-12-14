@@ -10,32 +10,6 @@ H2O_vol = 10 - DNA_vol
 # user input
 transformants = int(input("Please enter the number of transformants that will be produced: "))
 
-#change
-if transformants <= 8:
-    multichannel_column_number = 1
-elif transformants <= 16:
-      multichannel_column_number = 2
-elif transformants <= 24:
-      multichannel_column_number = 3  
-elif transformants <= 32:
-      multichannel_column_number = 4  
-elif transformants <= 40:
-      multichannel_column_number = 5  
-elif transformants <= 48:
-      multichannel_column_number = 6  
-elif transformants <= 56:
-      multichannel_column_number = 7  
-elif transformants <= 64:
-      multichannel_column_number = 8  
-elif transformants <= 72:
-      multichannel_column_number = 9  
-elif transformants <= 80:
-      multichannel_column_number = 10  
-elif transformants <= 88:
-      multichannel_column_number = 11 
-elif transformants <= 96:
-        multichannel_column_number = 12
-        
 ## temperatrue 
 # user input : temp
 temp_block = int(input("Please enter the temperature for heat shock: "))
@@ -43,8 +17,8 @@ temp_block = int(input("Please enter the temperature for heat shock: "))
 # user input : heat block time
 time_block = int(input("Please enter the time for heat shock (mins): "))
 
-
 ##############################################################
+
 
 from opentrons import simulate
 metadata = {'apiLevel': '2.8'}
@@ -94,6 +68,32 @@ p20single = protocol.load_instrument('p20_single_gen2',
                                     tip_racks=[tiprack_3])
 
 protocol.max_speeds['Z'] = 10
+
+#change
+if transformants <= 8:
+    multichannel_column_number = 1
+elif transformants <= 16:
+      multichannel_column_number = 2
+elif transformants <= 24:
+      multichannel_column_number = 3  
+elif transformants <= 32:
+      multichannel_column_number = 4  
+elif transformants <= 40:
+      multichannel_column_number = 5  
+elif transformants <= 48:
+      multichannel_column_number = 6  
+elif transformants <= 56:
+      multichannel_column_number = 7  
+elif transformants <= 64:
+      multichannel_column_number = 8  
+elif transformants <= 72:
+      multichannel_column_number = 9  
+elif transformants <= 80:
+      multichannel_column_number = 10  
+elif transformants <= 88:
+      multichannel_column_number = 11 
+elif transformants <= 96:
+        multichannel_column_number = 12
 
 ## Functions
 
@@ -308,9 +308,9 @@ with open(filename, "w") as new_file:
     new_file.write("time_block = " + str(time_block) + "\n")
     new_file.write("\n")
     
-    with open("YT.py") as f:
+    with open("YeastTransformation.py") as f:
         for num, line in enumerate(f, 1):
-          if num >= 50 and num <= 209:
+          if num >= 23 and num <= 278:
             new_file.write(line)
     
     new_file.write("\n")     
