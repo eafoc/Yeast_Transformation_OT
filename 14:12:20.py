@@ -5,7 +5,7 @@
 DNA_vol = int(input("Please enter the plasmid DNA volume (µl): "))
 
 #this should change accordingly with the DNA volume 
-H20_vol = 10 - DNA_vol
+H2O_vol = 10 - DNA_vol
 
 
 ## Changes to number of columns
@@ -79,7 +79,7 @@ tiprack_3 = protocol.load_labware('opentrons_96_tiprack_20ul', 4)
 
 # Reagent reservoir
 reservoir = protocol.load_labware('usascientific_12_reservoir_22ml', 3)
-LiAc_ssDNA = reservoir['A2']
+LiOAc_ssDNA = reservoir['A2']
 PEG = reservoir['A4']
 CaCl2 = reservoir['A6']
 yeast = reservoir['A8']
@@ -97,15 +97,15 @@ p20single = protocol.load_instrument('p20_single_gen2',
 
 protocol.max_speeds['Z'] = 10
 
-## Fucntions 
+## Functions
 
 #######################Transformation mixture preperation
 # LiOac and ssDNA transfer
 def LiOAc_ssDNA_transfer(column): 
     p300multi.pick_up_tip(tiprack_1['A1'])      ## Not sure about tips, are we reusing what we used for water?
-    p300multi.mix(5,200,LiAc_ssDNA)
+    p300multi.mix(5,200,LiOAc_ssDNA)
     p300multi.transfer(23,
-                         LiAc_ssDNA, 
+                         LiOAc_ssDNA, 
                          plate_OG.columns()[:column], 
                          touch_tip=True,
                          blowout=True,
@@ -130,27 +130,27 @@ def PEG_transfer(column):
 
 ##########################Plasmid DNA
 #should find a way to let the user know somehow what wells on the 96 plate corresponds to what eppendorf!!!
-# Transfers water and DNA from eppendorfs to the plate 9have to use block command for more control)
-def DNA_transfer(DNAvolume, H20volume, well):        
+# Transfers water and DNA from eppendorfs to the plate have to use block command for more control)
+def DNA_transfer(DNAvolume, H2Ovolume, well):        
     for i in range(well):
         p20single.pick_up_tip()
         if i <= 23:
-            p20single.aspirate(H20volume, water)
+            p20single.aspirate(H2Ovolume, water)
             p20single.aspirate(DNAvolume, eppendorfrack_1.wells()[i])
             p20single.blow_out(plate_OG.wells()[i])
             p20single.drop_tip()
         elif i <= 47:
-            p20single.aspirate(H20volume, water)
+            p20single.aspirate(H2Ovolume, water)
             p20single.aspirate(DNAvolume, eppendorfrack_2.wells()[i-24])
             p20single.blow_out(plate_OG.wells()[i])
             p20single.drop_tip()
         elif i <= 71:
-            p20single.aspirate(H20volume, water)
+            p20single.aspirate(H2Ovolume, water)
             p20single.aspirate(DNAvolume, eppendorfrack_3.wells()[i-48])
             p20single.blow_out(plate_OG.wells()[i])
             p20single.drop_tip()
         else:
-            p20single.aspirate(H20volume, water)
+            p20single.aspirate(H2Ovolume, water)
             p20single.aspirate(DNAvolume, eppendorfrack_4.wells()[i-72])
             p20single.blow_out(plate_OG.wells()[i])
             p20single.drop_tip()
@@ -216,7 +216,7 @@ def transfer_to_new(column):
 ##########################Remove supernatant
 def supernatant(column):
     p300multi.flow_rate.aspirate = 25 #slowed aspiration rate to avoid disturbing the pellet
-    p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised (idk how high the pellet would go)
+    p300multi.well_bottom_clearance.aspirate = 3 #this value would need to be optimised to avoid aspirating the pellet
     p300multi.flow_rate.dispense = 150
     for i in range(column):
         p300multi.pick_up_tip(tiprack_2.columns()[i][0])  
@@ -252,14 +252,14 @@ LiOAc_ssDNA_transfer(multichannel_column_number)
 PEG_transfer(multichannel_column_number) 
 
 # 3
-DNA_transfer(DNA_vol, H20_vol, transformants)
+DNA_transfer(DNA_vol, H2O_vol, transformants) 
 
 eppen_welllocation(transformants)
 
 # 4
 yeast_DNA(multichannel_column_number)
 
-# 5 - heat stuff
+# 5 - heat shock
 temp_mod_2.status
 temp_mod_2.temperature
 
