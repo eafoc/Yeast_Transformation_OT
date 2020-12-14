@@ -299,7 +299,7 @@ with open(filename, "w") as new_file:
     new_file.write("time_block = " + str(time_block) + "\n")
     new_file.write("\n")
     
-    with open("Opentrons_instructions.py") as f:
+    with open("YeastTransformationProtocol.py") as f:
         for num, line in enumerate(f, 1):
           if num >= 23 and num <= 278:
             new_file.write(line)
