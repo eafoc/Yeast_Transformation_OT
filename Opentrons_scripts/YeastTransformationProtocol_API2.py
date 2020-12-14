@@ -7,7 +7,7 @@ H2O_vol = 10 - DNA_vol
 
 ## Changes to number of columns
 # user input
-transformants = int(input("Please enter the number of transformants that will be produced: "))
+transformants = int(input("Please enter the number of transformants that will be produced (max 96): "))
 
 #change
 if transformants <= 8:
