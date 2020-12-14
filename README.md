@@ -38,7 +38,7 @@ Enter new file name.
 
 The new file will be saved in the Opentrons_scripts folder.
 
-You can now run your new file in the opentron!
+You can now run this in the opentron!
 
 
 
