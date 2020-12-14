@@ -305,7 +305,7 @@ with open(filename, "w") as new_file:
     new_file.write("\n")
     new_file.write("### DNA volumes a is set to: " + str(DNA_vol) + "\n")
     new_file.write("DNA_vol = " + str(DNA_vol) + "\n")
-    new_file.write("H20_vol = " + str(H20_vol) + "\n")
+    new_file.write("H2O_vol = " + str(H2O_vol) + "\n")
     new_file.write("\n")
     new_file.write("###Transformants is set to: " + str(transformants) + "\n")
     new_file.write("transformants = " + str(transformants) + "\n")
