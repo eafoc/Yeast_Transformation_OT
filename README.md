@@ -17,7 +17,7 @@ Run the script using python by typing the following on MacOS:
 
 	$ python YeastTransformationProtocol.py
 	
-Or windows:
+Or Windows:
   
 	$ python YeastTransformationProtocol
 
@@ -36,7 +36,7 @@ You can now run your new file in the opentron!
 
 
 
-### stop
+### Stop
 
 
 5. Ignore the two error messages that appear:
