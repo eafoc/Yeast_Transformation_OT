@@ -1,5 +1,6 @@
 # Yeast_Transformation_OT
-Automated yeast transformation protocol using Opentrons 2
+Automated yeast transformation protocol using Opentrons 2.
+Screenshot of the terminal instructions used on macs is given at the bottom of this README.
 
 1. Download the folder from GitHub
 
