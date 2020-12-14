@@ -6,8 +6,9 @@ Automated yeast transformation protocol using Opentrons 2
 ![Save GitHub folder on to your computer](https://i.postimg.cc/1t8HdhjY/Screenshot-2020-12-14-at-15-56-09.png)
 
 2. Open terminal or command line and change the directory (‘cd’) to ::
-  [YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts]
 
+  $YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
+ 
 3. Run the script using python by typing the following on either macs or windows
   on macs:
    python YeastTransformationProtocol.py
