@@ -3,7 +3,7 @@ Automated yeast transformation protocol using Opentrons 2
 
 1. Download the folder from GitHub
 
-![Save GitHub folder on to your computer](https://i.postimg.cc/dVc0f2L2/Picture1.png)
+![Save GitHub folder on to your computer](https://i.postimg.cc/1t8HdhjY/Screenshot-2020-12-14-at-15-56-09.png)
 
 2. Open terminal or command line and change the directory (‘cd’) to ::
   [YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts]
