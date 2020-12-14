@@ -8,6 +8,32 @@ H2O_vol = 10 - DNA_vol
 ## Changes to number of columns
 # user input
 transformants = int(input("Please enter the number of transformants that will be produced: "))
+
+#change
+if transformants <= 8:
+    multichannel_column_number = 1
+elif transformants <= 16:
+      multichannel_column_number = 2
+elif transformants <= 24:
+      multichannel_column_number = 3  
+elif transformants <= 32:
+      multichannel_column_number = 4  
+elif transformants <= 40:
+      multichannel_column_number = 5  
+elif transformants <= 48:
+      multichannel_column_number = 6  
+elif transformants <= 56:
+      multichannel_column_number = 7  
+elif transformants <= 64:
+      multichannel_column_number = 8  
+elif transformants <= 72:
+      multichannel_column_number = 9  
+elif transformants <= 80:
+      multichannel_column_number = 10  
+elif transformants <= 88:
+      multichannel_column_number = 11 
+elif transformants <= 96:
+        multichannel_column_number = 12
         
 ## temperatrue 
 # user input : temp
@@ -67,33 +93,6 @@ p20single = protocol.load_instrument('p20_single_gen2',
                                     tip_racks=[tiprack_3])
 
 protocol.max_speeds['Z'] = 10
-
-#change
-if transformants <= 8:
-    multichannel_column_number = 1
-elif transformants <= 16:
-      multichannel_column_number = 2
-elif transformants <= 24:
-      multichannel_column_number = 3  
-elif transformants <= 32:
-      multichannel_column_number = 4  
-elif transformants <= 40:
-      multichannel_column_number = 5  
-elif transformants <= 48:
-      multichannel_column_number = 6  
-elif transformants <= 56:
-      multichannel_column_number = 7  
-elif transformants <= 64:
-      multichannel_column_number = 8  
-elif transformants <= 72:
-      multichannel_column_number = 9  
-elif transformants <= 80:
-      multichannel_column_number = 10  
-elif transformants <= 88:
-      multichannel_column_number = 11 
-elif transformants <= 96:
-        multichannel_column_number = 12
-
 
 ## Functions
 
