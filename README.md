@@ -1,7 +1,7 @@
 # Yeast_Transformation_OT
 Automated yeast transformation protocol using Opentrons 2
 
-#Download the folder from GitHub
+# Download the folder from GitHub
 
 ![Save GitHub folder on to your computer](https://i.postimg.cc/1t8HdhjY/Screenshot-2020-12-14-at-15-56-09.png)
 
