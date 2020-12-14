@@ -13,7 +13,7 @@ Open terminal or command line and change the directory (‘cd’):
 Creating your customised protocol
 -------------------
 
-Run the script using python by typing the following on either mac:
+Run the script using python by typing the following on MacOS:
 
 	$ python YeastTransformationProtocol.py
 	
