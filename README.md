@@ -1,10 +1,9 @@
 # Yeast_Transformation_OT
-Automated yeast transformation protocol using Opentrons 2.
-Screenshot of the terminal instructions used on macs is given at the bottom of this README.
+Automated yeast transformation protocol using Opentrons 2
 
 1. Download the folder from GitHub
 
-![Save GitHub folder on to your computer](https://i.postimg.cc/1t8HdhjY/Screenshot-2020-12-14-at-15-56-09.png)
+![Save GitHub folder on to your computer](https://i.postimg.cc/dVc0f2L2/Picture1.png)
 
 2. Open terminal or command line and change the directory (‘cd’) to 
   YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
@@ -14,7 +13,7 @@ Screenshot of the terminal instructions used on macs is given at the bottom of t
    python YeastTransformationProtocol.py
 
   on windows:
-   py YeastTransformationProtocol.py
+   python YeastTransformationProtocol
       
 4. Enter the values specific to your experiment.
 
@@ -25,6 +24,8 @@ Screenshot of the terminal instructions used on macs is given at the bottom of t
 6. Name the new file your experiment name. e.g. 14122020_EloisesTransformation
 
 7. The new file will be saved in the Opentrons_scripts folder. If you like, you can check this using list (‘ls’) which shows all the files in your current working directory.
+  on windows:
+  Use dir to display a list of files.
 
 8. You can now run your new file in the opentron and it will use values specific to your experiment 
 
