@@ -13,13 +13,15 @@ Open terminal or command line and change the directory (‘cd’):
 Run the script 
 -------------------
 
-Run the script using python by typing the following on either macs or windows
-  on macs:n::
-  
-   $ python YeastTransformationProtocol.py
+Run the script using python by typing the following on either:
+Macs:
 
-  on windows:
-   python YeastTransformationProtocol
+	$ python YeastTransformationProtocol.py
+	
+Or windows:
+  
+	$ python YeastTransformationProtocol
+
       
 4. Enter the values specific to your experiment.
 
