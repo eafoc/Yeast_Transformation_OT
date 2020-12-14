@@ -12,16 +12,14 @@ Download the folder from GitHub
 
 ![Save GitHub folder on to your computer](https://i.postimg.cc/1t8HdhjY/Screenshot-2020-12-14-at-15-56-09.png)
 
-Open terminal or command line and change the directory (‘cd’):
 
-	$ YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
- 
+
 Creating your customised protocol
 -------------------
 
 Open terminal or command line and change the directory (‘cd’):
 
-	$ YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
+	$ YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts 
  
 Run the script using python by typing the following on MacOS:
 
