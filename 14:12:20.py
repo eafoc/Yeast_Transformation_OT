@@ -1,5 +1,3 @@
-#Python editing code (14/12/2020)
-
 ## DNA:water ratio
 # user input
 DNA_vol = int(input("Please enter the plasmid DNA volume per transformation (µl): "))
@@ -14,27 +12,27 @@ transformants = int(input("Please enter the number of transformants that will be
 
 #change
 if transformants <= 8:
-		multichannel_column_number = 1
+    multichannel_column_number = 1
 elif transformants <= 16:
-   		multichannel_column_number = 2
+      multichannel_column_number = 2
 elif transformants <= 24:
-   		multichannel_column_number = 3  
+      multichannel_column_number = 3  
 elif transformants <= 32:
-   		multichannel_column_number = 4  
+      multichannel_column_number = 4  
 elif transformants <= 40:
-   		multichannel_column_number = 5  
+      multichannel_column_number = 5  
 elif transformants <= 48:
-   		multichannel_column_number = 6  
+      multichannel_column_number = 6  
 elif transformants <= 56:
-   		multichannel_column_number = 7  
+      multichannel_column_number = 7  
 elif transformants <= 64:
-   		multichannel_column_number = 8  
+      multichannel_column_number = 8  
 elif transformants <= 72:
-   		multichannel_column_number = 9  
+      multichannel_column_number = 9  
 elif transformants <= 80:
-   		multichannel_column_number = 10  
+      multichannel_column_number = 10  
 elif transformants <= 88:
-   		multichannel_column_number = 11 
+      multichannel_column_number = 11 
 elif transformants <= 96:
         multichannel_column_number = 12
         
@@ -295,28 +293,28 @@ else:           ## If not, will add it automatically
 from itertools import islice
 
 with open(filename, "w") as new_file:
-	new_file.write("#Opentrons protocol\n")
-	new_file.write("\n")
-	new_file.write("### DNA volumes a is set to: " + str(DNA_vol) + "\n")
-	new_file.write("DNA_vol = " + str(DNA_vol) + "\n")
-	new_file.write("H2O_vol = " + str(H2O_vol) + "\n")
-	new_file.write("\n")
-	new_file.write("###Transformants is set to: " + str(transformants) + "\n")
-	new_file.write("transformants = " + str(transformants) + "\n")
-	new_file.write("multichannel_column_number = " + str(multichannel_column_number) + "\n")
-	new_file.write("\n")
-	new_file.write("###Temperature for heat shock is set to: " + str(temp_block) + "\n")
-	new_file.write("temp_block = " + str(temp_block) + "\n")
-	new_file.write("\n")
-	new_file.write("###Time for heat shock is set to: " + str(time_block) + "\n")
-	new_file.write("time_block = " + str(time_block) + "\n")
-	new_file.write("\n")
-	
-	with open("14:12:20.py") as f:     ## This needs to be the name of this file!
-        	for num, line in enumerate(f, 1):
-          		if num >= 50 and num <= 209:
-            		new_file.write(line)
-			
-	new_file.write("\n")     
-	new_file.write("for line in protocol.commands():\n")
-	new_file.write("    print(line)\n")  
+    new_file.write("#Opentrons protocol\n")
+    new_file.write("\n")
+    new_file.write("### DNA volumes a is set to: " + str(DNA_vol) + "\n")
+    new_file.write("DNA_vol = " + str(DNA_vol) + "\n")
+    new_file.write("H2O_vol = " + str(H2O_vol) + "\n")
+    new_file.write("\n")
+    new_file.write("###Transformants is set to: " + str(transformants) + "\n")
+    new_file.write("transformants = " + str(transformants) + "\n")
+    new_file.write("multichannel_column_number = " + str(multichannel_column_number) + "\n")
+    new_file.write("\n")
+    new_file.write("###Temperature for heat shock is set to: " + str(temp_block) + "\n")
+    new_file.write("temp_block = " + str(temp_block) + "\n")
+    new_file.write("\n")
+    new_file.write("###Time for heat shock is set to: " + str(time_block) + "\n")
+    new_file.write("time_block = " + str(time_block) + "\n")
+    new_file.write("\n")
+    
+    with open("YT.py") as f:
+        for num, line in enumerate(f, 1):
+          if num >= 50 and num <= 209:
+            new_file.write(line)
+    
+    new_file.write("\n")     
+    new_file.write("for line in protocol.commands():\n")
+    new_file.write("    print(line)\n")  
