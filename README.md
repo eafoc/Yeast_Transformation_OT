@@ -7,10 +7,11 @@ Automated yeast transformation protocol using Opentrons 2
 
   For an example, see screenshots.
 
-3. Run the script using python by typing the following on /textbf{macs}:
+3. Run the script using python by typing the following 
+#  on macs:
    python YeastTransformationProtocol.py
 
-   for /textbf{windows}:
+# on windows:
    py YeastTransformationProtocol.py
       
 4. Enter the values specific to your experiment.
