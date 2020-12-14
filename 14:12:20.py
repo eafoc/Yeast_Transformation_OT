@@ -266,9 +266,6 @@ temp_mod_2.temperature
 protocol.pause('Move plate from cold block on 3 to heat block on 9 for 40 minute heat shock')
 protocol.delay(minutes = time_block)
 
-#User removes the 96-well plate from the heat block at the end of the desired time back to posiiton 3. 
-
-#want this at the end of the protocol - the module wont turn off at the end of the protocol or if it is cancelled/reset by itself 
 temp_mod_2.deactivate() 
 
 # 6
