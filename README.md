@@ -19,6 +19,10 @@ Open terminal or command line and change the directory (‘cd’):
 Creating your customised protocol
 -------------------
 
+Open terminal or command line and change the directory (‘cd’):
+
+	$ YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
+ 
 Run the script using python by typing the following on MacOS:
 
 	$ python YeastTransformationProtocol_AP12.py
