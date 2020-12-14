@@ -10,11 +10,10 @@ Open terminal or command line and change the directory (‘cd’):
 
 	$ YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
  
-Run the script 
+Creating your customised protocol
 -------------------
 
-Run the script using python by typing the following on either:
-Macs:
+Run the script using python by typing the following on either mac:
 
 	$ python YeastTransformationProtocol.py
 	
@@ -22,8 +21,12 @@ Or windows:
   
 	$ python YeastTransformationProtocol
 
-      
-4. Enter the values specific to your experiment.
+
+Enter the values specific to your experiment.
+
+![Save GitHub folder on to your computer](https://i.postimg.cc/cLFZ72tb/Screenshot-2020-12-14-at-16-23-20.png)
+
+Enter new file name
 
 5. Ignore the two error messages that appear:
 
