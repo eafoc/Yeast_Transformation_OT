@@ -37,10 +37,10 @@ elif transformants <= 96:
         
 ## temperatrue 
 # user input : temp
-temp_block = int(input("Please enter the temperature for heat shock: "))
+temp_block = int(input("Please enter the temperature for heat shock (recommend 45): "))
 
 # user input : heat block time
-time_block = int(input("Please enter the time for heat shock (mins): "))
+time_block = int(input("Please enter the time for heat shock (recommend 40) (mins): "))
 
 
 ##############################################################
