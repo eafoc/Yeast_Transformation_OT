@@ -6,11 +6,9 @@ Automated yeast transformation protocol using Opentrons 2
 ![Save GitHub folder on to your computer](https://i.postimg.cc/dVc0f2L2/Picture1.png)
 
 2. Open terminal or command line and change the directory (‘cd’) to 
-
   YourFilePath/Yeast_Transformation_OT-main/Opentrons_scripts
 
 3. Run the script using python by typing the following on either macs or windows
-  
   on macs:
    python YeastTransformationProtocol.py
 
@@ -20,16 +18,14 @@ Automated yeast transformation protocol using Opentrons 2
 4. Enter the values specific to your experiment.
 
 5. Ignore the two error messages that appear:
-
 /Users/eloiseoconnor/.opentrons/deck_calibration.json not found. Loading defaults
-
 /Users/eloiseoconnor/.opentrons/robot_settings.json not found. Loading defaults
 
 6. Name the new file your experiment name. e.g. 14122020_EloisesTransformation
 
 7. The new file will be saved in the Opentrons_scripts folder. If you like, you can check this using list (‘ls’) which shows all the files in your current working directory.
   on windows:
-  Use dir to display a list of files.
+    Use dir to display a list of files.
 
 8. You can now run your new file in the opentron and it will use values specific to your experiment 
 
