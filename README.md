@@ -30,7 +30,7 @@ Or Windows:
 	$ python YeastTransformationProtocol_AP12
 
 
-Enter the values specific to your experiment.
+Prompts will appear, as shown below. Enter the specific values for your experiment.
 
 ![Save GitHub folder on to your computer](https://i.postimg.cc/cLFZ72tb/Screenshot-2020-12-14-at-16-23-20.png)
 
