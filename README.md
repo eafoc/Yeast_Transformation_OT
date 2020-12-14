@@ -26,7 +26,9 @@ Enter the values specific to your experiment.
 
 ![Save GitHub folder on to your computer](https://i.postimg.cc/cLFZ72tb/Screenshot-2020-12-14-at-16-23-20.png)
 
-Enter new file name
+Enter new file name. The new file will be saved in the Opentrons_scripts folder.
+
+You can now run your new file in the opentron!
 
 5. Ignore the two error messages that appear:
 
