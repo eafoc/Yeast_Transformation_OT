@@ -115,7 +115,7 @@ def LiOAc_ssDNA_transfer(column):
 
 # PEG transfer 
 def PEG_transfer(column):   
-    p300multi.pick_up_tip(tiprack_1['A1'])          ## Not sure about which tips we were going to use here                           
+    p300multi.pick_up_tip(tiprack_1['A2'])          ## Not sure about which tips we were going to use here                           
     p300multi.flow_rate.aspirate=40
     p300multi.flow_rate.dispense=40
     p300multi.transfer(120,
