@@ -45,8 +45,3 @@ Enter new file name.
 The new file will be saved in the Opentrons_scripts folder.
 
 You can now run this in the Opentrons app!
-
-
-
-
-
